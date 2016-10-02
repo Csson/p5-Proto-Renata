@@ -1,0 +1,45 @@
+$VAR1 = {
+          'sets' => [
+                      {
+                        'quantity' => 'all',
+                        'class' => 'Visit'
+                      },
+                      {
+                        'quantity' => 'all',
+                        'class' => 'School'
+                      },
+                      {
+                        'quantity' => 'all',
+                        'class' => 'User'
+                      },
+                      {
+                        'class' => 'Student',
+                        'quantity' => 'all'
+                      },
+                      {
+                        'class' => 'Link',
+                        'quantity' => 'all'
+                      },
+                      {
+                        'quantity' => 'all',
+                        'class' => 'UserSchool'
+                      },
+                      {
+                        'quantity' => 'all',
+                        'class' => 'Organisation'
+                      },
+                      {
+                        'class' => 'UserStudent',
+                        'quantity' => 'all'
+                      }
+                    ],
+          'has_many' => {
+                          'fetch' => 0
+                        },
+          'belongs_to' => {
+                            'fetch' => 0
+                          },
+          'might_have' => {
+                            'fetch' => 0
+                          }
+        };

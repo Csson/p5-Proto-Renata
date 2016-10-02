@@ -1,0 +1,636 @@
+---
+schema:
+  procedures: {}
+  tables:
+    link:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - link_id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - organisation_id
+          match_type: ''
+          name: link_fk_organisation_id
+          on_delete: CASCADE
+          on_update: CASCADE
+          options: []
+          reference_fields:
+            - organisation_id
+          reference_table: organisation
+          type: FOREIGN KEY
+      fields:
+        link_id:
+          data_type: bigint
+          default_value: ~
+          is_auto_increment: 1
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: link_id
+          order: 1
+          size:
+            - 0
+        name:
+          data_type: varchar
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: name
+          order: 4
+          size:
+            - 0
+        organisation_id:
+          data_type: bigint
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: organisation_id
+          order: 2
+          size:
+            - 0
+        url:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: url
+          order: 3
+          size:
+            - 0
+      indices:
+        - fields:
+            - organisation_id
+          name: link_idx_organisation_id
+          options: []
+          type: NORMAL
+      name: link
+      options: []
+      order: 2
+    organisation:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - organisation_id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        name:
+          data_type: varchar
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: name
+          order: 2
+          size:
+            - 0
+        organisation_id:
+          data_type: bigint
+          default_value: ~
+          is_auto_increment: 1
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: organisation_id
+          order: 1
+          size:
+            - 0
+      indices: []
+      name: organisation
+      options: []
+      order: 1
+    school:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - school_id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - organisation_id
+          match_type: ''
+          name: school_fk_organisation_id
+          on_delete: CASCADE
+          on_update: CASCADE
+          options: []
+          reference_fields:
+            - organisation_id
+          reference_table: organisation
+          type: FOREIGN KEY
+      fields:
+        name:
+          data_type: varchar
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: name
+          order: 3
+          size:
+            - 0
+        organisation_id:
+          data_type: bigint
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: organisation_id
+          order: 2
+          size:
+            - 0
+        school_id:
+          data_type: bigint
+          default_value: ~
+          is_auto_increment: 1
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: school_id
+          order: 1
+          size:
+            - 0
+      indices:
+        - fields:
+            - organisation_id
+          name: school_idx_organisation_id
+          options: []
+          type: NORMAL
+      name: school
+      options: []
+      order: 3
+    student:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - student_id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - school_id
+          match_type: ''
+          name: student_fk_school_id
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields:
+            - school_id
+          reference_table: school
+          type: FOREIGN KEY
+      fields:
+        birth_date:
+          data_type: date
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: birth_date
+          order: 5
+          size:
+            - 0
+        first_name:
+          data_type: varchar
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: first_name
+          order: 3
+          size:
+            - 0
+        last_name:
+          data_type: varchar
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: last_name
+          order: 4
+          size:
+            - 0
+        pin:
+          data_type: char
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: pin
+          order: 6
+          size:
+            - 4
+        school_id:
+          data_type: bigint
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: school_id
+          order: 2
+          size:
+            - 0
+        student_id:
+          data_type: bigint
+          default_value: ~
+          is_auto_increment: 1
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: student_id
+          order: 1
+          size:
+            - 0
+      indices:
+        - fields:
+            - school_id
+          name: student_idx_school_id
+          options: []
+          type: NORMAL
+      name: student
+      options: []
+      order: 5
+    user:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - user_id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - organisation_id
+          match_type: ''
+          name: user_fk_organisation_id
+          on_delete: CASCADE
+          on_update: CASCADE
+          options: []
+          reference_fields:
+            - organisation_id
+          reference_table: organisation
+          type: FOREIGN KEY
+      fields:
+        first_name:
+          data_type: varchar
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: first_name
+          order: 3
+          size:
+            - 0
+        last_name:
+          data_type: varchar
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: last_name
+          order: 4
+          size:
+            - 0
+        organisation_id:
+          data_type: bigint
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: organisation_id
+          order: 2
+          size:
+            - 0
+        user_id:
+          data_type: bigint
+          default_value: ~
+          is_auto_increment: 1
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: user_id
+          order: 1
+          size:
+            - 0
+      indices:
+        - fields:
+            - organisation_id
+          name: user_idx_organisation_id
+          options: []
+          type: NORMAL
+      name: user
+      options: []
+      order: 4
+    user_school:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - school_id
+            - user_id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - school_id
+          match_type: ''
+          name: user_school_fk_school_id
+          on_delete: CASCADE
+          on_update: CASCADE
+          options: []
+          reference_fields:
+            - school_id
+          reference_table: school
+          type: FOREIGN KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - user_id
+          match_type: ''
+          name: user_school_fk_user_id
+          on_delete: CASCADE
+          on_update: CASCADE
+          options: []
+          reference_fields:
+            - user_id
+          reference_table: user
+          type: FOREIGN KEY
+      fields:
+        school_id:
+          data_type: bigint
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: school_id
+          order: 1
+          size:
+            - 0
+        user_id:
+          data_type: bigint
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: user_id
+          order: 2
+          size:
+            - 0
+      indices:
+        - fields:
+            - school_id
+          name: user_school_idx_school_id
+          options: []
+          type: NORMAL
+        - fields:
+            - user_id
+          name: user_school_idx_user_id
+          options: []
+          type: NORMAL
+      name: user_school
+      options: []
+      order: 6
+    user_student:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - user_id
+            - student_id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - student_id
+          match_type: ''
+          name: user_student_fk_student_id
+          on_delete: CASCADE
+          on_update: CASCADE
+          options: []
+          reference_fields:
+            - student_id
+          reference_table: student
+          type: FOREIGN KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - user_id
+          match_type: ''
+          name: user_student_fk_user_id
+          on_delete: CASCADE
+          on_update: CASCADE
+          options: []
+          reference_fields:
+            - user_id
+          reference_table: user
+          type: FOREIGN KEY
+      fields:
+        student_id:
+          data_type: bigint
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: student_id
+          order: 2
+          size:
+            - 0
+        user_id:
+          data_type: bigint
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: user_id
+          order: 1
+          size:
+            - 0
+      indices:
+        - fields:
+            - student_id
+          name: user_student_idx_student_id
+          options: []
+          type: NORMAL
+        - fields:
+            - user_id
+          name: user_student_idx_user_id
+          options: []
+          type: NORMAL
+      name: user_student
+      options: []
+      order: 7
+    visit:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - visit_id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - student_id
+          match_type: ''
+          name: visit_fk_student_id
+          on_delete: CASCADE
+          on_update: CASCADE
+          options: []
+          reference_fields:
+            - student_id
+          reference_table: student
+          type: FOREIGN KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - user_id
+          match_type: ''
+          name: visit_fk_user_id
+          on_delete: CASCADE
+          on_update: CASCADE
+          options: []
+          reference_fields:
+            - user_id
+          reference_table: user
+          type: FOREIGN KEY
+      fields:
+        student_id:
+          data_type: bigint
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: student_id
+          order: 3
+          size:
+            - 0
+        user_id:
+          data_type: bigint
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: user_id
+          order: 2
+          size:
+            - 0
+        visit_date:
+          data_type: datetime
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: visit_date
+          order: 4
+          size:
+            - 0
+        visit_id:
+          data_type: bigint
+          default_value: ~
+          is_auto_increment: 1
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: visit_id
+          order: 1
+          size:
+            - 0
+      indices:
+        - fields:
+            - student_id
+          name: visit_idx_student_id
+          options: []
+          type: NORMAL
+        - fields:
+            - user_id
+          name: visit_idx_user_id
+          options: []
+          type: NORMAL
+      name: visit
+      options: []
+      order: 8
+  triggers: {}
+  views: {}
+translator:
+  add_drop_table: 0
+  filename: ~
+  no_comments: 0
+  parser_args:
+    sources:
+      - Link
+      - Organisation
+      - School
+      - Student
+      - User
+      - UserSchool
+      - UserStudent
+      - Visit
+  parser_type: SQL::Translator::Parser::DBIx::Class
+  producer_args: {}
+  producer_type: SQL::Translator::Producer::YAML
+  show_warnings: 0
+  trace: 0
+  version: 0.11021

@@ -1,0 +1,15 @@
+{
+    mode_env => 'PROTORENATA_MODE',
+    dist_name => 'Proto-Renata',
+    config_key => ':protorenata',
+    modes => {
+        production => {
+            config_file => [':my_dist_config', 'protorenata.conf'],
+            log_dir => [':my_dist_data'],
+        },
+        development => {
+            config_file => [qw/:dist_dir share protorenata_development.conf/],
+            log_dir => [qw/:dist_dir log/],
+        },
+    }
+}

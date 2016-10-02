@@ -1,0 +1,9 @@
+$HASH1 = {
+           birth_date => '2005-07-14',
+           class_id   => 1,
+           first_name => 'Agnes',
+           gender     => 'male',
+           last_name  => 'Bengtsson',
+           pin        => '0123',
+           student_id => 1
+         };

@@ -1,0 +1,6 @@
+$HASH1 = {
+           student_id => 7,
+           user_id    => 1,
+           visit_date => '2016-09-30 13:30:00',
+           visit_id   => 4
+         };

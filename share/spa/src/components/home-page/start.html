@@ -1,0 +1,87 @@
+    <div class="container-fluid">
+        <h1>Välkommen <span data-bind='text: user().firstName'></span></h1>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="panel panel-standard">
+                    <div class="panel-heading"><h2>Dina skolor</h2></div>
+                    <div class="panel-body thumbnail-container">
+                        <ul class="list-inline" data-bind="foreach: schools">
+                            <li><a class="thumbnail" data-bind="attr: { href: url }">
+                                    <span class="glyphicon glyphicon-home"></span>
+                                    <div class="caption" data-bind="text: name"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="panel panel-standard">
+                    <div class="panel-heading"><h2>Dina länkar</h2></div>
+                    <div class="panel-body thumbnail-container">
+                        <ul class="list-inline" data-bind="foreach: links">
+                            <li><a class="thumbnail" data-bind="attr: { href: url }">
+                                <span class="glyphicon glyphicon-globe"></span>
+                                <div class="caption" data-bind="text: name"></div>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- right -->
+            <div class="col-md-6">
+                <div class="panel panel-standard">
+                    <div class="panel-heading"><h2>Dina senaste elever</h2></div>
+                    <div class="panel-body">
+                        <table class="table table-striped table-condensed table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Namn</th>
+                                    <th>Senaste besök</th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: latestVisits">
+                                <tr data-bind="attr: { title: firstName }">
+                                    <td>
+                                        <a data-bind="text: initial, attr: { href: url }"></a> (<span data-bind="text: birthDate"></span>)
+                                    </td>
+                                    <td data-bind="attr: { title: visitDate }, text: timeAgo"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="panel panel-standard">
+                    <div class="panel-heading"><h2>Dina uppföljningar</h2></div>
+                    <div class="panel-body">
+                        <p>Inga uppföljningar registerade.</p>
+                    </div>
+                </div>
+
+                <div class="panel panel-standard">
+                    <div class="panel-heading"><h2>Dagens aktiviteter</h2></div>
+                    <div class="panel-body">
+                        <table class="table table-striped table-condensed table-hover" data-bind="visible: hasActivities">
+                            <thead>
+                                <tr>
+                                    <th class="text-right">Tid</th>
+                                    <th>Aktivitet</th>
+                                    <th>Beskrivning</th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: latestVisits">
+                                <tr>
+                                    <td class="text-right"><span data-bind="text: initial"></span> (051123)</td>
+                                    <td data-bind="attr: { title: visitDate }, text: timeAgo"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p data-bind="visible: !hasActivities()">Inga aktiviteter idag.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>

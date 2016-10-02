@@ -1,0 +1,9 @@
+
+
+<div class="content container">
+    <ol class="breadcrumb">
+        <li class="active">Hemsidan</li>
+    </ol>
+    <nav-content params="route: $root.route"></nav-content>
+    <div class="inner-content" data-bind="component: { name: $root.route().page + '-' + $root.route().tab, params: $root.route }"></div>
+</div>

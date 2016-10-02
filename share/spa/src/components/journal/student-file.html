@@ -1,0 +1,73 @@
+    <ol class="breadcrumb">
+        <li data-bind="text: student().class.school.organisation.name"></li>
+        <li data-bind="text: student().class.school.name"></li>
+        <li data-bind="text: student().class.name"></li>
+        <li class="active"><span data-bind="text: student().fullName"></span> (<span data-bind="text: student().identificationNumber"></span>)</li>
+    </ol>
+    <ul class="nav nav-tabs">
+        <li data-bind="css: { active: $root.route().tab === 'student' }"><a data-bind="attr: { href: student().url() }">
+            <span class="glyphicon glyphicon-user"></span>
+            Elevöversikt
+        </a></li>
+        <li data-bind="css: { active: $root.route().tab === 'student-file' }">
+            <a data-bind="attr: { href: student().urlFile() }"><span class="glyphicon glyphicon-book"></span> Elevakt</a>
+        </li>
+        <li data-bind="css: { active: $root.route().tab === 'student-note' }">
+            <a href="#home/settings"><span class="glyphicon glyphicon-file"></span> Minnesanteckningar</a>
+        </li>
+    </ul>
+    <div class="inner-content">
+        <div class="fluid-container">
+            <div class="toolbar">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">Ny journalanteckning <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Åtgärdsprogram</a></li>
+                        <li><a href="#">Besök</a></li>
+                        <li><a href="#">Administrativ anteckning</a></li>
+                        <li><a href="#">Möte</a></li>
+                        <li><a href="#">Telefonanteckning</a></li>
+                        <li><a href="#">Brev till elev</a></li>
+                    </ul>
+                </div>
+                <a class="btn btn-default" href="#">Ny kontroll</a>
+                <a class="btn btn-default" href="#">Ny varning</a>
+                <a class="btn btn-default" href="#">Sök</a>
+                <a class="btn btn-default" href="#">Uppdatera</a>
+                <a class="btn btn-default" href="#">Skriv ut</a>
+                <a class="btn btn-default" href="#">Dela journal</a>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="media">
+                        <div class="media-left"><span class="student-photo glyphicon glyphicon-user"></span></div>
+                        <div class="media-body">
+                            <h2 data-bind="text: student().fullName"></h2>
+                            <ol class="list-inline list-inline-pipe">
+                                <li data-bind="text: student().identificationNumber"></li>
+                                <li data-bind="text: student().gender"></li>
+                                <li data-bind="text: student().age"></li>
+                                <li data-bind="text: student().class.name"></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+                    <div data-bind="foreach: student().warnings">
+                        <div class="media student-warning alert alert-danger">
+                            <div class="media-left"><span class="glyphicon glyphicon-warning-sign"></span></div>
+                            <div class="media-body">
+                                <h5 data-bind="text: type"></h5>
+                                <p data-bind="text: info"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>

@@ -1,0 +1,6 @@
+$HASH1 = {
+           name      => 'Lilla skolan',
+           organisation_id
+                     => 1,
+           school_id => 1
+         };

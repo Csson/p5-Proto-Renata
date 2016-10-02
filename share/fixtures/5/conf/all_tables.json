@@ -1,0 +1,49 @@
+{
+   "sets" : [
+      {
+         "class" : "Organisation",
+         "quantity" : "all"
+      },
+      {
+         "class" : "Class",
+         "quantity" : "all"
+      },
+      {
+         "class" : "Link",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Student"
+      },
+      {
+         "class" : "UserSchool",
+         "quantity" : "all"
+      },
+      {
+         "class" : "Visit",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "School"
+      },
+      {
+         "class" : "User",
+         "quantity" : "all"
+      },
+      {
+         "class" : "UserStudent",
+         "quantity" : "all"
+      }
+   ],
+   "might_have" : {
+      "fetch" : 0
+   },
+   "has_many" : {
+      "fetch" : 0
+   },
+   "belongs_to" : {
+      "fetch" : 0
+   }
+}

@@ -1,0 +1,7 @@
+$HASH1 = {
+           link_id => 1,
+           name    => 'DN.se',
+           organisation_id
+                   => 1,
+           url     => 'http://www.dn.se/'
+         };

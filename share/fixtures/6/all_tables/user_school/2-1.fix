@@ -1,0 +1,4 @@
+$HASH1 = {
+           school_id => 2,
+           user_id   => 1
+         };

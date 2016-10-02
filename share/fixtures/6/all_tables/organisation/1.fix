@@ -1,0 +1,5 @@
+$HASH1 = {
+           name       => 'Undervisningsproffsen',
+           organisation_id
+                      => 1
+         };

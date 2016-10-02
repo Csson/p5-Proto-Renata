@@ -6,3 +6,11 @@ MYMETA.*
 !META.json
 /.prove
 .coverhistory.json
+
+/share/spa/.DS_Store
+/share/spa/node_modules/
+/share/spa/bower_modules/
+/share/spa/dist/
+
+/share/mode.autoconf
+/share/protorenata_development.conf

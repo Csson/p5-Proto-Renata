@@ -1,0 +1,6 @@
+$HASH1 = {
+           first_name      => 'Allan',
+           last_name       => 'Anderson',
+           organisation_id => 1,
+           user_id         => 1
+         };
