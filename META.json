@@ -69,7 +69,6 @@
             "Dist::Zilla::Plugin::MetaYAML" : "0",
             "Dist::Zilla::Plugin::NextRelease::Grouped" : "0.0200",
             "Dist::Zilla::Plugin::PodSyntaxTests" : "0",
-            "Dist::Zilla::Plugin::PodWeaver" : "4.006",
             "Dist::Zilla::Plugin::Prereqs" : "0",
             "Dist::Zilla::Plugin::PromptIfStale" : "0",
             "Dist::Zilla::Plugin::Readme" : "0",
@@ -387,121 +386,6 @@
             "class" : "Dist::Zilla::Plugin::NextRelease::Grouped",
             "name" : "NextRelease::Grouped",
             "version" : "0.0200"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::PodWeaver",
-            "config" : {
-               "Dist::Zilla::Plugin::PodWeaver" : {
-                  "finder" : [
-                     ":InstallModules",
-                     ":ExecFiles"
-                  ],
-                  "plugins" : [
-                     {
-                        "class" : "Pod::Weaver::Plugin::EnsurePod5",
-                        "name" : "@CorePrep/EnsurePod5",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Plugin::H1Nester",
-                        "name" : "@CorePrep/H1Nester",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Plugin::SingleEncoding",
-                        "name" : "-SingleEncoding",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Name",
-                        "name" : "Name",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Badges",
-                        "name" : "Badges",
-                        "version" : "0.0402"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Version",
-                        "name" : "Version",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Region",
-                        "name" : "prelude",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Generic",
-                        "name" : "Synopsis",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Generic",
-                        "name" : "Description",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Generic",
-                        "name" : "Overview",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Collect",
-                        "name" : "Attributes",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Collect",
-                        "name" : "Methods",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Collect",
-                        "name" : "Functions",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Leftovers",
-                        "name" : "Leftovers",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Region",
-                        "name" : "postlude",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::GenerateSection",
-                        "name" : "SOURCE",
-                        "version" : "1.01"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::GenerateSection",
-                        "name" : "HOMEPAGE",
-                        "version" : "1.01"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Authors",
-                        "name" : "Authors",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Section::Legal",
-                        "name" : "Legal",
-                        "version" : "4.012"
-                     },
-                     {
-                        "class" : "Pod::Weaver::Plugin::Transformer",
-                        "name" : "List",
-                        "version" : "4.012"
-                     }
-                  ]
-               }
-            },
-            "name" : "PodWeaver",
-            "version" : "4.008"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Check",

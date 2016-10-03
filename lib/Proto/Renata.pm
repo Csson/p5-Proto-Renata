@@ -69,4 +69,6 @@ __END__
 
 =pod
 
+=encoding utf-8
+
 Javascriptkällkoden ligger under C<share/spa/src>.

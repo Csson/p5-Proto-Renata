@@ -1,4 +1,4 @@
-# This file was auto-generated from iller.yaml by Dist::Iller on 2016-10-03 05:32:25 UTC.
+# This file was auto-generated from iller.yaml by Dist::Iller on 2016-10-03 05:33:37 UTC.
 
 on runtime => sub {
     requires 'DBIx::Class' => '0';
@@ -67,7 +67,6 @@ on develop => sub {
     requires 'Dist::Zilla::Plugin::MetaYAML' => '0';
     requires 'Dist::Zilla::Plugin::NextRelease::Grouped' => '0.0200';
     requires 'Dist::Zilla::Plugin::PodSyntaxTests' => '0';
-    requires 'Dist::Zilla::Plugin::PodWeaver' => '4.006';
     requires 'Dist::Zilla::Plugin::Prereqs' => '0';
     requires 'Dist::Zilla::Plugin::PromptIfStale' => '0';
     requires 'Dist::Zilla::Plugin::Readme' => '0';
