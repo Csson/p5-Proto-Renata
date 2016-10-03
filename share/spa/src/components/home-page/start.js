@@ -1,5 +1,6 @@
 import ko from 'knockout';
 import templateMarkup from 'text!./start.html';
+import { Event } from '../../core/event.js';
 import { User } from '../../core/user.js';
 import { School } from '../../core/school.js';
 
@@ -34,11 +35,10 @@ class HomePageStart {
         self.latestVisits = ko.observableArray();
         self.links = ko.observableArray();
 
-        self.activities = ko.observableArray([]);
-        self.hasActivities = ko.computed(function() {
-            return self.activites && self.activites.length > 0;
+        self.events = ko.observableArray();
+        self.hasEvents = ko.computed(function() {
+            return self.events().length > 0;
         });
-        //self.showNoActivities = ko.computed(function() { return !self.showActivityTable() });
 
         $.getJSON('/api/user/', function(result) {
             self.user(new User(result));
@@ -57,6 +57,13 @@ class HomePageStart {
             for (var i = 0; i < result.visits.length; i++) {
                 self.latestVisits.push(new LatestVisit(result.visits[i]));
             }
+        });
+        $.getJSON('/api/user/events', function(result) {
+            self.events();
+            for (var i = 0; i < result.events.length; i++) {
+                self.events.push(new Event(result.events[i]));
+            }
+            console.log(self.events());
         });
     }
     

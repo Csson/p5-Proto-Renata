@@ -27,12 +27,13 @@
                     </ul>
                 </div>
                 <a class="btn btn-default" href="#">Skicka sms</a>
-                <a class="btn btn-default" href="#">Boka i kalender</a>
+                <a class="btn btn-default" href="" data-toggle="modal" data-target="#modal-calendar-event">Boka i kalender</a>
                 <a class="btn btn-default" href="#">Skicka meddelande om</a>
                 <a class="btn btn-default" href="#">Administrera <span class="caret"></span></a>
             </div>
 
             <div class="row">
+                <!-- left -->
                 <div class="col-md-6">
                     <div class="media">
                         <div class="media-left"><span class="student-photo glyphicon glyphicon-user"></span></div>
@@ -46,9 +47,8 @@
                             </ol>
                         </div>
                     </div>
-
                 </div>
-
+                <!-- right -->
                 <div class="col-md-6">
                     <div data-bind="foreach: student().warnings">
                         <div class="media student-warning alert alert-danger">
@@ -62,5 +62,163 @@
                 </div>
 
             </div>
+            <!-- end row -->
+            <div class="row">
+                <!-- left -->
+                <div class="col-md-6">
+                    <div class="panel panel-default panel-contact">
+                        <div class="panel-heading"><span class="h3">Kontaktinformation</span></div>
+                        <div class="panel-body">
+                            <table class="table table-condensed table-discreet">
+                                <tbody>
+                                    <tr>
+                                        <th>Postadress</th>
+                                        <td data-bind="text: student().address"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Telefon</th>
+                                        <td data-bind="text: student().phone"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Mail</th>
+                                        <td data-bind="text: student().email"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="panel panel-default panel-contact">
+                        <div class="panel-heading panel-main-heading"><span class="h3">Vårdnadshavare</span></div>
+                        <div data-bind="foreach: student().guardians">
+                            <div class="panel-heading"><span class="h4" data-bind="text: name"></span></div>
+                            <div class="panel-body">
+                                <table class="table table-condensed table-discreet">
+                                    <tbody>
+                                        <tr>
+                                            <th>Postadress</th>
+                                            <td data-bind="text: postAddress"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Telefon</th>
+                                            <td data-bind="text: phone"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Jobbtelefon</th>
+                                            <td data-bind="text: workPhone"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Mail</th>
+                                            <td data-bind="text: email"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- right -->
+                <div class="col-md-6">
+                    <div class="panel panel-default panel-contact">
+                        <div class="panel-heading"><span class="h4">Elevkort</span></div>
+                        <div class="panel-body">
+                                <table class="table table-condensed table-discreet">
+                                    <tbody data-bind="foreach: student().studentcards">
+                                        <tr>
+                                            <th data-bind="text: heading"></th>
+                                            <td data-bind="text: info"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
         </div>
     </div>
+
+
+
+
+<div class="modal fade" id="modal-calendar-event" tabindex="-1">
+    <div class="modal-dialog modal-dialog-wide">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title"><span class="glyphicon glyphicon-calendar"></span> Boka i kalender</h4>
+            </div>
+            <form data-bind="submit: onSubmitModalForm">
+                <div class="modal-body">
+                    <div class="fluid-container">
+                        <div class="row">
+                            <!-- left -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="date">Titel</label>
+                                    <input type="text" class="form-control" id="date" data-bind="value: formTitle" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">Kategori</label>
+                                    <select class="form-control"><option data-bind="value: formCategory">Möte</option></select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">Vems kalender</label>
+                                    <select class="form-control" data-bind="options: usersAtSchool(), optionsText: 'fullName', optionsValue: 'userId', value: formUserId" id="responsible"></select>
+                                </div>
+                                <div class="checkbox">
+                                    <label for="all-day">
+                                        <input type="checkbox" id="all-day" data-bind="checked: formAllDay"> Heldag
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="date">Startdatum</label>
+                                            <input type="text" class="form-control" id="date" placeholder="åååå-mm-dd" data-bind="value: formDate" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group" data-bind="visible: !formAllDay()">
+                                            <label for="time">Starttid</label>
+                                            <input type="text" class="form-control" id="time" placeholder="hh:mm" data-bind="value: formTime" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- right -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="date">Beskrivning</label>
+                                    <textarea style="height: 65px" class="form-control" data-bind="value: formDescription"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">Elev</label>
+                                    <input disabled="disabled" type="text" class="form-control" id="date" data-bind="value: formStudentText" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">Skicka påminnelse-sms</label>
+                                    <select class="form-control">
+                                        <option data-bind="value: formSmsReminder">Dagen innan, klockan 12</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">SMS-nummer</label>
+                                    <input type="text" data-bind="value: formStudentPhone" class="form-control" disabled="disabled" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Avbryt</button>
+                    <button type="button" class="btn btn-default" type="submit" data-bind="click: onSubmitModalForm" data-dismiss="modal"><span class="glyphicon glyphicon-ok"></span> Spara</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

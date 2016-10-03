@@ -37,9 +37,10 @@ var routerInstance = new Router({
         { url: 'about',                params: { page: 'about-page' } },
         { url: 'home/start',           params: { page: 'home-page', tab: 'start' } },
         { url: 'home/settings',        params: { page: 'home-page', tab: 'settings' } },
-        { url: 'journal',              params: { page: 'journal' } },
+        { url: 'journal',              params: { page: 'journal', tab: 'example' } },
         { url: 'journal/student/{studentId}', params: { page: 'journal', tab: 'student' } },
         { url: 'journal/student/{studentId}/file', params: { page: 'journal', tab: 'student-file' } },
+        { url: 'journal/school/{schoolId}', params: { page: 'journal', tab: 'school' } },
     ]
 });
 

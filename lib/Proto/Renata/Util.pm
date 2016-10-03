@@ -12,6 +12,7 @@ use ReadonlyX;
 use utf8;
 use Exporter 'import';
 our @EXPORT_OK = qw/
+    month_to_name
     time_ago
     long_time_ago
 /;
@@ -22,6 +23,11 @@ Readonly::Scalar my $DAY = $HOUR * 24;
 Readonly::Scalar my $WEEK = $DAY * 7;
 Readonly::Scalar my $MONTH = $DAY * 30;
 Readonly::Scalar my $YEAR = $DAY * 365;
+
+sub month_to_name($month) {
+    my @months = ('', qw/jan feb mar apr maj jun jul aug sep okt nov dec/);
+    return $months[$month + 0];
+}
 
 sub time_ago($seconds) {
     return $seconds < 29            ? 'för mindre än en minut sedan'

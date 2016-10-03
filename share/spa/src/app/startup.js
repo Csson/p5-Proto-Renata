@@ -34,6 +34,16 @@ ko.components.register('journal-student-file', { require: 'components/journal/st
 
 
 
+ko.components.register('journal-example', { require: 'components/journal/example' });
+
+
+
+
+ko.components.register('journal-school', { require: 'components/journal/school' });
+
+
+
+
 // [Scaffolded component registrations will be inserted here. To retain this feature, don't remove this comment.]
 
 // Start the application

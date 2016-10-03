@@ -8,7 +8,7 @@ package Proto::Renata::Schema;
 our $VERSION = '0.0001';
 
 use mro 'c3';
-sub schema_version { 7 }
+sub schema_version { 12 }
 
 use base 'DBIx::Class::Sweeten::Schema';
 use Proto::Renata::Config;

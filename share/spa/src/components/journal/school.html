@@ -1,0 +1,19 @@
+    <ol class="breadcrumb">
+        <li data-bind="text: school().organisation.name"></li>
+        <li class="active" data-bind="text: school().name"></li>
+    </ol>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="">
+            Klassöversikt
+        </a></li>
+    </ul>
+    <div class="inner-content">
+        <div class="fluid-container">
+            <div data-bind="foreach: classes">
+                <h3 data-bind="text: name"></h3>
+                <ul class="list-unstyled" data-bind="foreach: students">
+                    <li><a data-bind="attr: { href: url() }, text: fullName"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>

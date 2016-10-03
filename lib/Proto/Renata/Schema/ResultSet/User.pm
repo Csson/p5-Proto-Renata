@@ -12,6 +12,9 @@ use Proto::Renata::Schema::ResultSet -components => [qw/
 /];
 use experimental qw/postderef signatures/;
 
+sub get_users_by_school_id($self, $school_id) {
+    return $self->search({ 'user_schools.school_id' => { -ident => $school_id }}, { join => 'user_schools' })->order_by('first_name');
+}
 
 1;
 

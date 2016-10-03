@@ -20,7 +20,7 @@ sub search_suggestions($self, $search_string) {
 }
 
 sub get_by_id($self, $student_id) {
-    return $self->prefetch('warnings')->prefetch({ class => { school => 'organisation'}})->find($student_id);
+    return $self->prefetch([qw/warnings guardians studentcards notes/])->prefetch({ class => { school => 'organisation'}})->find($student_id);
 }
 
 1;

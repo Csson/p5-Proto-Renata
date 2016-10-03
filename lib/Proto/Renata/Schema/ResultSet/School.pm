@@ -12,6 +12,10 @@ use Proto::Renata::Schema::ResultSet -components => [qw/
 /];
 use experimental qw/postderef signatures/;
 
+sub get_by_id($self, $school_id) {
+    $self->search({ school_id => $school_id })->prefetch('organisation');
+}
+
 sub get_by_user_id($self, $user_id) {
     $self->search({ 'user_schools.user_id' => { -ident => $user_id } })->prefetch('user_schools');
 }

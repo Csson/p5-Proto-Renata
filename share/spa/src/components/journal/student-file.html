@@ -13,7 +13,7 @@
             <a data-bind="attr: { href: student().urlFile() }"><span class="glyphicon glyphicon-book"></span> Elevakt</a>
         </li>
         <li data-bind="css: { active: $root.route().tab === 'student-note' }">
-            <a href="#home/settings"><span class="glyphicon glyphicon-file"></span> Minnesanteckningar</a>
+            <a href="#"><span class="glyphicon glyphicon-file"></span> Minnesanteckningar</a>
         </li>
     </ul>
     <div class="inner-content">
@@ -26,7 +26,7 @@
                         <li><a href="#">Besök</a></li>
                         <li><a href="#">Administrativ anteckning</a></li>
                         <li><a href="#">Möte</a></li>
-                        <li><a href="#">Telefonanteckning</a></li>
+                        <li><a href="" data-toggle="modal" data-target="#modal-phone-contact">Telefonanteckning</a></li>
                         <li><a href="#">Brev till elev</a></li>
                     </ul>
                 </div>
@@ -69,5 +69,92 @@
 
             </div>
 
+            <div class="row">
+                <div class="col-md-12">
+                    <div data-bind="foreach: notes">
+                        <div class="panel panel-note">
+                            <div class="panel-heading panel-heading-inline"><span class="h3" data-bind="text: createdDate"></span> <span class="h4" data-bind="text: contactType"></span></div>
+                            <div class="panel-body">
+                                <table class="table table-discreet">
+                                    <tbody>
+                                        <tr>
+                                            <th>Anledning</th>
+                                            <td data-bind="text: note"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="text-right">Ansvarig: <span data-bind="text: user.fullName"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+
+
+
+
+<div class="modal fade" id="modal-phone-contact" tabindex="-1">
+    <div class="modal-dialog modal-dialog-wide">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title"><span class="glyphicon glyphicon-phone"></span> Ny journalanteckning -
+                    <span data-bind="text: student().fullName"></span> <span data-bind="text: student().identificationNumber"></span>
+                </h4>
+            </div>
+            <form data-bind="submit: onSubmitModalForm">
+                <div class="modal-body">
+                    <div class="fluid-container">
+                        <div class="row">
+                            <div class="col-md-4"><span class="h3 pull-right">Telefonanteckning</span></div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="date">Händelsetid - Datum</label>
+                                    <input type="text" class="form-control form-control-discreet" id="date" data-bind="value: nowDate" />
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="time">Händelsetid - Klockslag</label>
+                                    <input type="text" class="form-control form-control-discreet" id="time" data-bind="value: nowTime" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-offset-4 col-md-8">
+                                <div class="form-group">
+                                    <label for="responsible">Ansvarig</label>
+                                    <select class="form-control" data-bind="options: usersAtSchool(), optionsText: 'fullName', optionsValue: 'userId', value: formResponsible" id="responsible"></select>
+                                </div>
+                               <div class="form-group">
+                                    <label for="type">Kontakttyp</label>
+                                    <select class="form-control" id="type">
+                                        <option data-bind="value: formType">Telefonkontakt</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-offset-4 col-md-8">
+                                <div class="form-group">
+                                    <label for="note">Anteckning</label>
+                                    <textarea class="form-control" id="note" rows="8" data-bind="value: formNote"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Avbryt</button>
+                    <button type="button" class="btn btn-default" type="submit" data-bind="click: onSubmitModalForm" data-dismiss="modal"><span class="glyphicon glyphicon-ok"></span> Spara</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

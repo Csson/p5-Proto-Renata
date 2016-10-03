@@ -15,11 +15,16 @@ use experimental qw/postderef signatures/;
 
 primary user_id => bigint auto_increment across UserSchool => 'School',
                                          across UserStudent => 'Student',
-                                         many 'Visit';
+                                         many 'Visit',
+                                         many 'Note',
+                                         many 'Event';
 belongs Organisation => bigint;
     col first_name => varchar;
     col last_name => varchar;
 
+sub add_event($self, $args) {
+    $self->create_related(events => $args);
+}
 
 1;
 
