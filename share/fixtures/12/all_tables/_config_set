@@ -1,0 +1,69 @@
+$VAR1 = {
+          'belongs_to' => {
+                            'fetch' => 0
+                          },
+          'has_many' => {
+                          'fetch' => 0
+                        },
+          'might_have' => {
+                            'fetch' => 0
+                          },
+          'sets' => [
+                      {
+                        'quantity' => 'all',
+                        'class' => 'Student'
+                      },
+                      {
+                        'class' => 'Visit',
+                        'quantity' => 'all'
+                      },
+                      {
+                        'quantity' => 'all',
+                        'class' => 'Warning'
+                      },
+                      {
+                        'quantity' => 'all',
+                        'class' => 'UserStudent'
+                      },
+                      {
+                        'quantity' => 'all',
+                        'class' => 'Note'
+                      },
+                      {
+                        'class' => 'Guardian',
+                        'quantity' => 'all'
+                      },
+                      {
+                        'class' => 'Organisation',
+                        'quantity' => 'all'
+                      },
+                      {
+                        'class' => 'UserSchool',
+                        'quantity' => 'all'
+                      },
+                      {
+                        'quantity' => 'all',
+                        'class' => 'Link'
+                      },
+                      {
+                        'quantity' => 'all',
+                        'class' => 'User'
+                      },
+                      {
+                        'quantity' => 'all',
+                        'class' => 'School'
+                      },
+                      {
+                        'class' => 'Studentcard',
+                        'quantity' => 'all'
+                      },
+                      {
+                        'quantity' => 'all',
+                        'class' => 'Event'
+                      },
+                      {
+                        'quantity' => 'all',
+                        'class' => 'Class'
+                      }
+                    ]
+        };

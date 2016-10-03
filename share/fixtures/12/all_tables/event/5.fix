@@ -1,0 +1,12 @@
+$HASH1 = {
+           all_day      => '',
+           category     => "M\366te",
+           description  => '',
+           event_id     => 5,
+           sms_number   => '',
+           sms_reminder => 'Dagen innan, klockan 12',
+           start_date   => '2016-09-20 11:30:00',
+           student_id   => 4,
+           title        => "Ett gammalt m\366te",
+           user_id      => 1
+         };

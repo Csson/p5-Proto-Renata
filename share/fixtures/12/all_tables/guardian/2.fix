@@ -1,0 +1,9 @@
+$HASH1 = {
+           email        => 'biggo@example.net',
+           guardian_id  => 2,
+           name         => 'Biggo Andersen',
+           phone        => '075-654 54 32',
+           post_address => "Stora gatan 3\n113 13  EXEMPELK\326PING",
+           student_id   => 7,
+           work_phone   => '0123-52 52 25'
+         };

@@ -1,0 +1,6 @@
+$HASH1 = {
+           info       => "N\366tter",
+           student_id => 7,
+           type       => 'Allergi',
+           warning_id => 1
+         };

@@ -1,0 +1,12 @@
+$HASH1 = {
+           address    => '',
+           birth_date => '2003-11-22',
+           class_id   => 3,
+           email      => '',
+           first_name => 'Luna',
+           gender     => 'female',
+           last_name  => "M\345nsson",
+           phone      => '',
+           pin        => 6789,
+           student_id => 5
+         };

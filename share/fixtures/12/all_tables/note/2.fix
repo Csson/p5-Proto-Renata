@@ -1,0 +1,8 @@
+$HASH1 = {
+           contact_type => 'telefonkontakt',
+           created_date => '2016-10-03 04:26:00',
+           note         => 'Busringning',
+           note_id      => 2,
+           student_id   => 7,
+           user_id      => 1
+         };

@@ -1,0 +1,8 @@
+$HASH1 = {
+           heading   => 'Syskon',
+           info      => 'Ett syskon i Lilla Skolan',
+           student_id
+                     => 7,
+           studentcard_id
+                     => 2
+         };

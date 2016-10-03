@@ -1,0 +1,57 @@
+{
+   "might_have" : {
+      "fetch" : 0
+   },
+   "sets" : [
+      {
+         "class" : "Link",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "UserSchool"
+      },
+      {
+         "quantity" : "all",
+         "class" : "UserStudent"
+      },
+      {
+         "class" : "Warning",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Class"
+      },
+      {
+         "class" : "Visit",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "School"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Organisation"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Student"
+      },
+      {
+         "class" : "User",
+         "quantity" : "all"
+      },
+      {
+         "class" : "Guardian",
+         "quantity" : "all"
+      }
+   ],
+   "belongs_to" : {
+      "fetch" : 0
+   },
+   "has_many" : {
+      "fetch" : 0
+   }
+}

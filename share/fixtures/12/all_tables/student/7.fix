@@ -1,0 +1,12 @@
+$HASH1 = {
+           address    => "Stora gatan 3\n113 13  EXEMPELK\326PING",
+           birth_date => '2004-06-08',
+           class_id   => 4,
+           email      => 'wiggo@example.com',
+           first_name => 'Wiggo',
+           gender     => 'male',
+           last_name  => 'Andersen',
+           phone      => '076-555 32 76',
+           pin        => 9012,
+           student_id => 7
+         };

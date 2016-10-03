@@ -1,0 +1,7 @@
+$HASH1 = {
+           link_id => 11,
+           name    => 'Github',
+           organisation_id
+                   => 1,
+           url     => 'http://www.github.com/csson/p5-proto-renata'
+         };

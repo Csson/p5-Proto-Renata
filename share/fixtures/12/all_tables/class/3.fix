@@ -1,0 +1,5 @@
+$HASH1 = {
+           class_id  => 3,
+           name      => '3G',
+           school_id => 2
+         };
