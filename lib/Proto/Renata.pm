@@ -19,9 +19,8 @@ use experimental qw/postderef signatures/;
 sub startup($self) {
     $self->setup;
 
-    my $distdir = path(Mojo::Home->new->rel_dir('share/spa/dist'));
-    warn $distdir->absolute->stringify;
-    push $self->static->paths->@*, Mojo::Home->new->rel_dir('share/spa/dist');
+    warn $self->serverconf->config->get('public_dir');
+    push $self->static->paths->@*, $self->serverconf->config->get('public_dir');
 
     $self->renderer->cache->max_keys(0);
 
