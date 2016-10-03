@@ -13,17 +13,9 @@ Proto::Renata - Short intro
 
 # VERSION
 
-Version 0.0100, released 2016-10-02.
+Version 0.0100, released 2016-10-03.
 
-# SYNOPSIS
-
-    use Proto::Renata;
-
-# DESCRIPTION
-
-Proto::Renata is ...
-
-# SEE ALSO
+Javascriptkällkoden ligger under `share/spa/src`.
 
 # SOURCE
 

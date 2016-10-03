@@ -116,7 +116,19 @@
       },
       "runtime" : {
          "requires" : {
-            "perl" : "5.010000"
+            "DBIx::Class" : "0",
+            "DBIx::Class::Candy" : "0",
+            "DBIx::Class::Sweeten" : "0",
+            "DateTime" : "1.05",
+            "DateTime::Format::Strptime" : "0",
+            "Dir::Self" : "0",
+            "Exporter" : "0",
+            "Mojolicious" : "7.0",
+            "Moo" : "0",
+            "ReadonlyX" : "0",
+            "Time::Moment" : "0",
+            "experimental" : "0",
+            "perl" : "5.020000"
          }
       },
       "test" : {
@@ -157,8 +169,20 @@
          "file" : "lib/Proto/Renata/Schema/Result/Class.pm",
          "version" : "0.0100"
       },
+      "Proto::Renata::Schema::Result::Event" : {
+         "file" : "lib/Proto/Renata/Schema/Result/Event.pm",
+         "version" : "0.0100"
+      },
+      "Proto::Renata::Schema::Result::Guardian" : {
+         "file" : "lib/Proto/Renata/Schema/Result/Guardian.pm",
+         "version" : "0.0100"
+      },
       "Proto::Renata::Schema::Result::Link" : {
          "file" : "lib/Proto/Renata/Schema/Result/Link.pm",
+         "version" : "0.0100"
+      },
+      "Proto::Renata::Schema::Result::Note" : {
+         "file" : "lib/Proto/Renata/Schema/Result/Note.pm",
          "version" : "0.0100"
       },
       "Proto::Renata::Schema::Result::Organisation" : {
@@ -171,6 +195,10 @@
       },
       "Proto::Renata::Schema::Result::Student" : {
          "file" : "lib/Proto/Renata/Schema/Result/Student.pm",
+         "version" : "0.0100"
+      },
+      "Proto::Renata::Schema::Result::Studentcard" : {
+         "file" : "lib/Proto/Renata/Schema/Result/Studentcard.pm",
          "version" : "0.0100"
       },
       "Proto::Renata::Schema::Result::User" : {
@@ -205,8 +233,20 @@
          "file" : "lib/Proto/Renata/Schema/ResultSet/Class.pm",
          "version" : "0.0100"
       },
+      "Proto::Renata::Schema::ResultSet::Event" : {
+         "file" : "lib/Proto/Renata/Schema/ResultSet/Event.pm",
+         "version" : "0.0100"
+      },
+      "Proto::Renata::Schema::ResultSet::Guardian" : {
+         "file" : "lib/Proto/Renata/Schema/ResultSet/Guardian.pm",
+         "version" : "0.0100"
+      },
       "Proto::Renata::Schema::ResultSet::Link" : {
          "file" : "lib/Proto/Renata/Schema/ResultSet/Link.pm",
+         "version" : "0.0100"
+      },
+      "Proto::Renata::Schema::ResultSet::Note" : {
+         "file" : "lib/Proto/Renata/Schema/ResultSet/Note.pm",
          "version" : "0.0100"
       },
       "Proto::Renata::Schema::ResultSet::Organisation" : {
@@ -219,6 +259,10 @@
       },
       "Proto::Renata::Schema::ResultSet::Student" : {
          "file" : "lib/Proto/Renata/Schema/ResultSet/Student.pm",
+         "version" : "0.0100"
+      },
+      "Proto::Renata::Schema::ResultSet::Studentcard" : {
+         "file" : "lib/Proto/Renata/Schema/ResultSet/Studentcard.pm",
          "version" : "0.0100"
       },
       "Proto::Renata::Schema::ResultSet::User" : {

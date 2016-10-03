@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use 5.010000;
+use 5.020000;
 
 use ExtUtils::MakeMaker;
 
@@ -24,9 +24,22 @@ my %WriteMakefileArgs = (
     "bin/renata-runner.pl"
   ],
   "LICENSE" => "perl",
-  "MIN_PERL_VERSION" => "5.010000",
+  "MIN_PERL_VERSION" => "5.020000",
   "NAME" => "Proto::Renata",
-  "PREREQ_PM" => {},
+  "PREREQ_PM" => {
+    "DBIx::Class" => 0,
+    "DBIx::Class::Candy" => 0,
+    "DBIx::Class::Sweeten" => 0,
+    "DateTime" => "1.05",
+    "DateTime::Format::Strptime" => 0,
+    "Dir::Self" => 0,
+    "Exporter" => 0,
+    "Mojolicious" => "7.0",
+    "Moo" => 0,
+    "ReadonlyX" => 0,
+    "Time::Moment" => 0,
+    "experimental" => 0
+  },
   "TEST_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
@@ -42,11 +55,23 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
+  "DBIx::Class" => 0,
+  "DBIx::Class::Candy" => 0,
+  "DBIx::Class::Sweeten" => 0,
+  "DateTime" => "1.05",
+  "DateTime::Format::Strptime" => 0,
+  "Dir::Self" => 0,
+  "Exporter" => 0,
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
   "IO::Handle" => 0,
   "IPC::Open3" => 0,
-  "Test::More" => "0.96"
+  "Mojolicious" => "7.0",
+  "Moo" => 0,
+  "ReadonlyX" => 0,
+  "Test::More" => "0.96",
+  "Time::Moment" => 0,
+  "experimental" => 0
 );
 
 

@@ -15,7 +15,19 @@ header:
 prereqs:
   runtime:
     requires:
-      - perl: 5.010000
+      - perl: 5.020000
+      - Mojolicious: 7.0
+      - DBIx::Class
+      - DBIx::Class::Candy
+      - DBIx::Class::Sweeten
+      - DateTime
+      - DateTime::Format::Strptime
+      - Dir::Self
+      - experimental
+      - Exporter
+      - Moo
+      - ReadonlyX
+      - Time::Moment
 
 plugins:
   - +config: Author::CSSON

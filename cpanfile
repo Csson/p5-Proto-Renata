@@ -1,7 +1,19 @@
-# This file was auto-generated from iller.yaml by Dist::Iller on 2016-10-02 19:45:15 UTC.
+# This file was auto-generated from iller.yaml by Dist::Iller on 2016-10-03 05:32:25 UTC.
 
 on runtime => sub {
-    requires 'perl' => '5.010000';
+    requires 'DBIx::Class' => '0';
+    requires 'DBIx::Class::Candy' => '0';
+    requires 'DBIx::Class::Sweeten' => '0';
+    requires 'DateTime' => '1.05';
+    requires 'DateTime::Format::Strptime' => '0';
+    requires 'Dir::Self' => '0';
+    requires 'Exporter' => '0';
+    requires 'Mojolicious' => '7.0';
+    requires 'Moo' => '0';
+    requires 'ReadonlyX' => '0';
+    requires 'Time::Moment' => '0';
+    requires 'experimental' => '0';
+    requires 'perl' => '5.020000';
 };
 on test => sub {
     requires 'ExtUtils::MakeMaker' => '0';
