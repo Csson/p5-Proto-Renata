@@ -12,12 +12,15 @@ use Mojo::Base 'Mojolicious';
 use Mojo::Home;
 use Proto::Renata::Config;
 use Proto::Renata::Schema;
+use Path::Tiny;
 use experimental qw/postderef signatures/;
 
 
 sub startup($self) {
     $self->setup;
 
+    my $distdir = path(Mojo::Home->new->rel_dir('share/spa/dist'));
+    warn $distdir->absolute->stringify;
     push $self->static->paths->@*, Mojo::Home->new->rel_dir('share/spa/dist');
 
     $self->renderer->cache->max_keys(0);
