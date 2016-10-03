@@ -1,17 +1,11 @@
 $VAR1 = {
-          'belongs_to' => {
-                            'fetch' => 0
-                          },
           'has_many' => {
                           'fetch' => 0
                         },
-          'might_have' => {
-                            'fetch' => 0
-                          },
           'sets' => [
                       {
-                        'quantity' => 'all',
-                        'class' => 'Student'
+                        'class' => 'Student',
+                        'quantity' => 'all'
                       },
                       {
                         'class' => 'Visit',
@@ -22,16 +16,16 @@ $VAR1 = {
                         'class' => 'Warning'
                       },
                       {
-                        'quantity' => 'all',
-                        'class' => 'UserStudent'
-                      },
-                      {
-                        'quantity' => 'all',
-                        'class' => 'Note'
-                      },
-                      {
-                        'class' => 'Guardian',
+                        'class' => 'UserStudent',
                         'quantity' => 'all'
+                      },
+                      {
+                        'class' => 'Note',
+                        'quantity' => 'all'
+                      },
+                      {
+                        'quantity' => 'all',
+                        'class' => 'Guardian'
                       },
                       {
                         'class' => 'Organisation',
@@ -42,8 +36,8 @@ $VAR1 = {
                         'quantity' => 'all'
                       },
                       {
-                        'quantity' => 'all',
-                        'class' => 'Link'
+                        'class' => 'Link',
+                        'quantity' => 'all'
                       },
                       {
                         'quantity' => 'all',
@@ -54,16 +48,22 @@ $VAR1 = {
                         'class' => 'School'
                       },
                       {
-                        'class' => 'Studentcard',
+                        'quantity' => 'all',
+                        'class' => 'Studentcard'
+                      },
+                      {
+                        'class' => 'Event',
                         'quantity' => 'all'
                       },
                       {
-                        'quantity' => 'all',
-                        'class' => 'Event'
-                      },
-                      {
-                        'quantity' => 'all',
-                        'class' => 'Class'
+                        'class' => 'Class',
+                        'quantity' => 'all'
                       }
-                    ]
+                    ],
+          'might_have' => {
+                            'fetch' => 0
+                          },
+          'belongs_to' => {
+                            'fetch' => 0
+                          }
         };
